@@ -32,6 +32,7 @@ public class OpenChromeOnAndroid implements Interaction {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, emulatorName);
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
         capabilities.setCapability("automationName", "UiAutomator2");
+        capabilities.setCapability("chromedriverExecutable", "C:\\Users\\User\\Documents\\bb\\test_bolivariano_serenity\\src\\test\\resources\\windows\\chromedriver.exe");
 
         AppiumDriver driver;
         try {
