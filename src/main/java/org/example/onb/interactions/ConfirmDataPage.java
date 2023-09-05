@@ -30,5 +30,6 @@ public class ConfirmDataPage {
     public static final Target CHECK_TERMINOS_Y_CONDICIONES = Target.the("Check Terminos y Condiciones").located(By.cssSelector("#divCheckTratDatosTermCond > div > p-checkbox"));
 
     public static final Target BUTTON_CONTINUAR = Target.the("Button Continuar").located(By.cssSelector("#botonContinuar"));
+    public static final Target LOADER = Target.the("Loader").locatedBy("body > div > div > div > img");
 
 }

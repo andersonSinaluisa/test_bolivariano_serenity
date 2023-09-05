@@ -22,4 +22,6 @@ public class HomePage extends PageObject {
     public static final Target BUTTON_CONTINUAR = Target.the("Button Continuar").locatedBy("//button[starts-with(text(),'Continuar Sin FacePhi')]");
 
     public static final Target ALERT_MESSAGE_ERROR = Target.the("Alert Message Error").locatedBy("#pregunta1 > app-error-message > div");
+
+    public static final Target LOADER = Target.the("Loader").locatedBy("body > div > div > div > img");
 }

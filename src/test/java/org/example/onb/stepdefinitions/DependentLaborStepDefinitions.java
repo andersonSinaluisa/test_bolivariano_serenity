@@ -7,6 +7,7 @@ import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
+import net.thucydides.core.webdriver.SerenityWebdriverManager;
 import org.example.onb.interactions.ConfirmDataPage;
 import org.example.onb.interactions.HomePage;
 import org.example.onb.models.Person;
@@ -15,7 +16,10 @@ import org.example.onb.tasks.OpenChromeOnAndroid;
 import org.example.onb.tasks.OpenChromeOnWeb;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -58,6 +62,10 @@ public class DependentLaborStepDefinitions {
     @Then("el usuario es redirigido a la pagina de confirmacion de datos")
     public void el_usuario_es_redirigido_a_la_pagina_de_confirmacion_de_datos() {
         // Write code here that turns the phrase above into concrete actions
+        //esperar a que el loader desaparezca y que el input de nombre este presente
+        SerenityWebdriverManager.inThisTestThread().getCurrentDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Espera implícita de 10 segundos
+
+
         actor.should(seeThat(
                 the(ConfirmDataPage.INPUT_NOMBRE),
                 isPresent()
@@ -65,13 +73,12 @@ public class DependentLaborStepDefinitions {
     }
     @When("el usuario confirma sus datos e ingresa sus datos faltantes")
     public void el_usuario_confirma_sus_datos_e_ingresa_sus_datos_faltantes(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
+        //  | <celular> | <correo> | <ciudad> | <direccion> |
+        person.setCelular(dataTable.cell(0,0));
+        person.setCorreo(dataTable.cell(0,1));
+        person.setCiudad(dataTable.cell(0,2));
+        person.setDireccion(dataTable.cell(0,3));
+
     }
     @When("acepta los terminos y condiciones")
     public void acepta_los_terminos_y_condiciones() {
@@ -98,7 +105,6 @@ public class DependentLaborStepDefinitions {
     @Then("el usuario es redirigido a la pagina de ingresar datos laborales")
     public void el_usuario_es_redirigido_a_la_pagina_de_ingresar_datos_laborales() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
     @When("el usuario ingresa sus datos laborales")
     public void el_usuario_ingresa_sus_datos_laborales(io.cucumber.datatable.DataTable dataTable) {
