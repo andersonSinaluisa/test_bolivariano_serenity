@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="2" failures="0" name="Abrir una cuenta como laboral dependiente" skipped="0" tests="2" time="21.32" timestamp="2023-09-07 02:39:20"><testcase name=""><error message="element click intercepted: Element &lt;button _ngcontent-wba-c6=&quot;&quot; class=&quot;bt-caja ancla ng-star-inserted btnHover&quot; id=&quot;botonContinuar&quot; style=&quot;&#10;                  width: 152px;&#10;                  height: 33px;&#10;                  font: normal 14px/18px Montserrat;&#10;                  letter-spacing: 0.35px;&#10;                  min-width: 152px;&#10;                  padding: 5px;&#10;                  border-radius: 6px;&#10;                  font-size: 12px; &quot;&gt;...&lt;/button&gt; is not clickable at point (518, 571). Other element would receive the click: &lt;ngb-modal-window role=&quot;dialog&quot; tabindex=&quot;-1&quot; class=&quot;modal fade show d-block content-2023-modal-t&quot; aria-modal=&quot;true&quot;&gt;...&lt;/ngb-modal-window&gt;&#10;  (Session info: chrome=116.0.5845.142)&#10;Build info: version: '4.11.0', revision: '040bc5406b'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [8569a681ac45fab83ecbcff522101cd4, clickElement {id=D650DF147101757E8FEFDA680C030079_element_30}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.142, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\clien\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57380}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57380/devtoo..., se:cdpVersion: 116.0.5845.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on windows (8569a681ac45fab83ecbcff522101cd4)] -&gt; css selector: #botonContinuar]&#10;Session ID: 8569a681ac45fab83ecbcff522101cd4" type="org.openqa.selenium.ElementClickInterceptedException">element click intercepted: Element &lt;button _ngcontent-wba-c6="" class="bt-caja ancla ng-star-inserted btnHover" id="botonContinuar" style="
+                  width: 152px;
+                  height: 33px;
+                  font: normal 14px/18px Montserrat;
+                  letter-spacing: 0.35px;
+                  min-width: 152px;
+                  padding: 5px;
+                  border-radius: 6px;
+                  font-size: 12px; "&gt;...&lt;/button&gt; is not clickable at point (518, 571). Other element would receive the click: &lt;ngb-modal-window role="dialog" tabindex="-1" class="modal fade show d-block content-2023-modal-t" aria-modal="true"&gt;...&lt;/ngb-modal-window&gt;
+  (Session info: chrome=116.0.5845.142)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8569a681ac45fab83ecbcff522101cd4, clickElement {id=D650DF147101757E8FEFDA680C030079_element_30}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.142, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\clien\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57380}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57380/devtoo..., se:cdpVersion: 116.0.5845.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8569a681ac45fab83ecbcff522101cd4)] -&gt; css selector: #botonContinuar]
+Session ID: 8569a681ac45fab83ecbcff522101cd4</error><system-err>element click intercepted: Element &lt;button _ngcontent-wba-c6="" class="bt-caja ancla ng-star-inserted btnHover" id="botonContinuar" style="
+                  width: 152px;
+                  height: 33px;
+                  font: normal 14px/18px Montserrat;
+                  letter-spacing: 0.35px;
+                  min-width: 152px;
+                  padding: 5px;
+                  border-radius: 6px;
+                  font-size: 12px; "&gt;...&lt;/button&gt; is not clickable at point (518, 571). Other element would receive the click: &lt;ngb-modal-window role="dialog" tabindex="-1" class="modal fade show d-block content-2023-modal-t" aria-modal="true"&gt;...&lt;/ngb-modal-window&gt;
+  (Session info: chrome=116.0.5845.142)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8569a681ac45fab83ecbcff522101cd4, clickElement {id=D650DF147101757E8FEFDA680C030079_element_30}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.142, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\clien\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57380}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57380/devtoo..., se:cdpVersion: 116.0.5845.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8569a681ac45fab83ecbcff522101cd4)] -&gt; css selector: #botonContinuar]
+Session ID: 8569a681ac45fab83ecbcff522101cd4&#13;
+net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:519)&#13;
+net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:499)&#13;
+net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:471)&#13;
+net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:213)&#13;
+net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:200)&#13;
+net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:92)&#13;
+org.example.onb.tasks.EnterDataInConfirmData.performAs(EnterDataInConfirmData.java:38)&#13;
+net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:519)&#13;
+net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:499)&#13;
+net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:471)&#13;
+net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:213)&#13;
+net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:200)&#13;
+net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:92)&#13;
+org.example.onb.stepdefinitions.DependentLaborStepDefinitions.el_usuario_confirma_sus_datos_e_ingresa_sus_datos_faltantes(DependentLaborStepDefinitions.java:81)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
+io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:84)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase></testsuite>

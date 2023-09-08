@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 
 public class ConfirmDataPage {
 
+
+    public static final Target TEXT_TITILE = Target.the("Text Title").locatedBy("//h2[starts-with(text(),' Confirma tus datos')]");
     public static final Target INPUT_NOMBRE = Target.the("Input Nombre").located(By.cssSelector("#confirmaDatos1 > div > div > div:nth-child(1) > div > h1 > span:nth-child(2)"));
 
     public static final Target INPUT_FECHA_NACIMIENTTO = Target.the("Input Fecha de Nacimiento").located(By.cssSelector("#confirmaDatos1 > div > div > div:nth-child(2) > div > h1 > span:nth-child(2)"));
@@ -20,7 +22,7 @@ public class ConfirmDataPage {
 
     public static final Target SELECT_CIUDAD = Target.the("Select Ciudad").located(By.cssSelector("#idCiudadesSelect"));
 
-    public static final Target SELECT_CIUDAD_OPTION = Target.the("Select Ciudad Option").locatedBy("//*[@class=\"ng-option-label\" and contains(text(), \"{0}\")]");
+    public static final Target SELECT_CIUDAD_OPTION = Target.the("Select Ciudad Option").locatedBy(".ng-dropdown-panel-items .ng-option-label");
 
     public static final Target SELECT_OFICINA = Target.the("Select Oficina").located(By.cssSelector("#idAgenciasSelect"));
 
@@ -29,6 +31,7 @@ public class ConfirmDataPage {
 
     public static final Target CHECK_TERMINOS_Y_CONDICIONES = Target.the("Check Terminos y Condiciones").located(By.cssSelector("#divCheckTratDatosTermCond > div > p-checkbox"));
 
+    public static final Target CLOSE_CHECK_TERMINOS_Y_CONDICIONES = Target.the("Close Check Terminos y Condiciones").located(By.cssSelector("body > ngb-modal-window > div > div > div > div.modal-header > button"));
     public static final Target BUTTON_CONTINUAR = Target.the("Button Continuar").located(By.cssSelector("#botonContinuar"));
     public static final Target LOADER = Target.the("Loader").locatedBy("body > div > div > div > img");
 

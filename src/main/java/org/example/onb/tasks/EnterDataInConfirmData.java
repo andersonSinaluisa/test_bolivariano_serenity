@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.ui.Select;
@@ -16,15 +17,26 @@ public class EnterDataInConfirmData  implements Interaction {
     public EnterDataInConfirmData(Person person) {
         this.person = person;
     }
-    public static EnterDataInHome withData(Person person) {
-        return Tasks.instrumented(EnterDataInHome.class, person);
+    public static EnterDataInConfirmData withData(Person person) {
+        return Tasks.instrumented(EnterDataInConfirmData.class, person);
     }
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(person.getCelular()).into(ConfirmDataPage.INPUT_CELULAR),
                 Enter.theValue(person.getCorreo()).into(ConfirmDataPage.INPUT_EMAIL),
-                SelectFromOptions.byVisibleText(person.getCiudad()).from(ConfirmDataPage.SELECT_CIUDAD)
+                Click.on(ConfirmDataPage.SELECT_CIUDAD),
+                Click.on(ConfirmDataPage.SELECT_CIUDAD_OPTION),
+                Click.on(ConfirmDataPage.SELECT_OFICINA),
+                Click.on(ConfirmDataPage.SELECT_CIUDAD_OPTION)
+        );
+
+        actor.attemptsTo(
+                Click.on(ConfirmDataPage.CHECK_TERMINOS_Y_CONDICIONES)
+        );
+
+        actor.attemptsTo(
+                Click.on(ConfirmDataPage.BUTTON_CONTINUAR)
         );
     }
 

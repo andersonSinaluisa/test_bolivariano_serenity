@@ -11,9 +11,7 @@ import net.thucydides.core.webdriver.SerenityWebdriverManager;
 import org.example.onb.interactions.ConfirmDataPage;
 import org.example.onb.interactions.HomePage;
 import org.example.onb.models.Person;
-import org.example.onb.tasks.EnterDataInHome;
-import org.example.onb.tasks.OpenChromeOnAndroid;
-import org.example.onb.tasks.OpenChromeOnWeb;
+import org.example.onb.tasks.*;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -67,7 +65,7 @@ public class DependentLaborStepDefinitions {
 
 
         actor.should(seeThat(
-                the(ConfirmDataPage.INPUT_NOMBRE),
+                the(ConfirmDataPage.TEXT_TITILE),
                 isPresent()
         ));
     }
@@ -79,14 +77,19 @@ public class DependentLaborStepDefinitions {
         person.setCiudad(dataTable.cell(0,2));
         person.setDireccion(dataTable.cell(0,3));
 
+
+        actor.wasAbleTo(EnterDataInConfirmData.withData(person));
+
     }
     @When("acepta los terminos y condiciones")
     public void acepta_los_terminos_y_condiciones() {
         // Write code here that turns the phrase above into concrete actions
+        actor.wasAbleTo(CheckTermsInConfirmData.check());
     }
     @When("hace click en el boton de continuar")
     public void hace_click_en_el_boton_de_continuar() {
         // Write code here that turns the phrase above into concrete actions
+        actor.wasAbleTo(ClickButtonContinue.check());
     }
     @Then("el usuario es redirigido a la pagina de ingresar domicilio")
     public void el_usuario_es_redirigido_a_la_pagina_de_ingresar_domicilio() {
