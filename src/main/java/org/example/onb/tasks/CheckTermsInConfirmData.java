@@ -22,12 +22,16 @@ public class CheckTermsInConfirmData implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(ConfirmDataPage.CHECK_TERMINOS_Y_CONDICIONES)
+        );
+
+        //esperar implicitamente
+        getDriver().manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS);
 
 
+        actor.attemptsTo(
+                Click.on(ConfirmDataPage.CLOSE_CHECK_TERMINOS_Y_CONDICIONES)
         );
-        ((JavascriptExecutor) getDriver()).executeScript(
-                "arguments[0].click();", ConfirmDataPage.CHECK_TERMINOS_Y_CONDICIONES
-        );
+
     }
 
     @Override

@@ -31,13 +31,7 @@ public class EnterDataInConfirmData  implements Interaction {
                 Click.on(ConfirmDataPage.SELECT_CIUDAD_OPTION)
         );
 
-        actor.attemptsTo(
-                Click.on(ConfirmDataPage.CHECK_TERMINOS_Y_CONDICIONES)
-        );
 
-        actor.attemptsTo(
-                Click.on(ConfirmDataPage.BUTTON_CONTINUAR)
-        );
     }
 
     @Override

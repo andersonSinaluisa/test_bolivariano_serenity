@@ -21,6 +21,10 @@ public class Person {
     private String direccionTrabajo;
     private String referencia;
     private String telefonoTrabajo;
+    private String tipoTrabajo;
+
+    private String EgresoMensual;
+    private String telefono;
     private String poseeActivos;
     private String poseePasivos;
     private String activos;
@@ -39,8 +43,32 @@ public class Person {
         // Inicializa las variables aquí si es necesario
     }
 
+    public String getTipoTrabajo() {
+        return tipoTrabajo;
+    }
+
+    public String getEgresoMensual() {
+        return EgresoMensual;
+    }
+
+    public void setEgresoMensual(String egresoMensual) {
+        EgresoMensual = egresoMensual;
+    }
+
+    public void setTipoTrabajo(String tipoTrabajo) {
+        this.tipoTrabajo = tipoTrabajo;
+    }
+
     public String getDispositivo() {
         return dispositivo;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public void setDispositivo(String dispositivo) {

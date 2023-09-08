@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.thucydides.core.webdriver.SerenityWebdriverManager;
 import org.example.onb.interactions.ConfirmDataPage;
+import org.example.onb.interactions.DomicilePage;
 import org.example.onb.interactions.HomePage;
 import org.example.onb.models.Person;
 import org.example.onb.tasks.*;
@@ -94,16 +95,25 @@ public class DependentLaborStepDefinitions {
     @Then("el usuario es redirigido a la pagina de ingresar domicilio")
     public void el_usuario_es_redirigido_a_la_pagina_de_ingresar_domicilio() {
         // Write code here that turns the phrase above into concrete actions
+        actor.should(seeThat(
+                the(DomicilePage.TEXT_TITILE),
+                isPresent()
+        ));
     }
     @When("el usuario ingresa sus datos de domicilio")
     public void el_usuario_ingresa_sus_datos_de_domicilio(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
+        //   | <ciudad> | <parroquia> | <direccionCompleta> | <descripcionCasa> | <referenciaCasa> | <numeroDomicilio> | <situacionLaboral> | <dependienteLaboral> |
+        person.setCiudad(dataTable.cell(0,0));
+        person.setParroquia(dataTable.cell(0,1));
+        person.setDireccionCompleta(dataTable.cell(0,2));
+        person.setDescripcionCasa(dataTable.cell(0,3));
+        person.setReferenciaCasa(dataTable.cell(0,4));
+        person.setNumeroDomicilio(dataTable.cell(0,5));
+        person.setSituacionLaboral(dataTable.cell(0,6));
+        person.setDependienteLaboral(dataTable.cell(0,7));
+
+        actor.wasAbleTo(EnterDataInDomicile.withData(person));
+
     }
     @Then("el usuario es redirigido a la pagina de ingresar datos laborales")
     public void el_usuario_es_redirigido_a_la_pagina_de_ingresar_datos_laborales() {

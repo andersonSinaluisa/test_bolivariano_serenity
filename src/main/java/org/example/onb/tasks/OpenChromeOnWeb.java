@@ -22,13 +22,13 @@ public class OpenChromeOnWeb implements Interaction {
         String directorioBase = Paths.get("").toAbsolutePath().toString();
 
         //join src/test/resources/windows/chromedriver.exe
-        directorioBase = Paths.get(directorioBase, "src", "test", "resources", "windows").toAbsolutePath().toString();
+        directorioBase = Paths.get(directorioBase, "src", "test", "resources", "windows","chromedriver.exe").toAbsolutePath().toString();
 
 
-
+        System.out.println(directorioBase);
         String rutaControlador = directorioBase ;
 
-        //System.setProperty("webdriver.chrome.driver", rutaControlador);
+        System.setProperty("webdriver.chrome.driver", rutaControlador);
 
         // Configura las opciones de Chrome, si es necesario
         ChromeOptions chromeOptions = new ChromeOptions();
