@@ -4,6 +4,8 @@ import net.serenitybdd.screenplay.targets.Target;
 
 public class SelfEmployedPage {
 
+
+    public static final Target TEXT_TITLE = Target.the("Text Title").locatedBy("//h5[starts-with(text(),' Información laboral')]");
     public static final Target INPUT_NOMBRE_EMPRESA = Target.the("Input Nombre Empresa").locatedBy("#onboarding_nombre_empresa");
 
     public static final Target INPUT_ANTIGUEDAD = Target.the("Input Antiguedad").locatedBy("#dependiente-antiguedad");

@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class DomicilePage {
 
 
-    public static final Target TEXT_TITILE = Target.the("Text Title").locatedBy("//h2[starts-with(text(),'Ingresa tus datos de contacto')]");
+    public static final Target TEXT_TITILE = Target.the("Text Title").locatedBy("//h5[starts-with(text(),' Ingresa tus datos de contacto')]");
 
     public static final Target SELECT_CIUDAD = Target.the("Select Ciudad").locatedBy("#paddingSelected");
 
@@ -27,12 +27,12 @@ public class DomicilePage {
 
     public static final Target SELECT_SITUACION_LABORAL = Target.the("Select Situacion Laboral").locatedBy("#onb_select_situacion_laboral");
 
-    public static final Target SELECT_SITUACION_LABORAL_OPTION = Target.the("Select Situacion Laboral Option").locatedBy(".ng-option ng-option-label");
+    public static final Target SELECT_SITUACION_LABORAL_OPTION = Target.the("Select Situacion Laboral Option").locatedBy("//span[starts-with(text(),\"{0}\")]");
 
 
     public static final Target SELECT_TIPO_TRABAJO =    Target.the("Select Tipo Trabajo").locatedBy("/html/body/app-root/div/div[2]/app-ingresa-domicilio/section[2]/div[2]/div[3]/div/div[2]/ng-select");
 
-    public static final Target SELECT_TIPO_TRABAJO_OPTION = Target.the("Select Tipo Trabajo Option").locatedBy("//span[starts-with(text(),'{0}')]");
+    public static final Target SELECT_TIPO_TRABAJO_OPTION = Target.the("Select Tipo Trabajo Option").locatedBy("//span[normalize-space()=\"{0}\" and contains(@class, 'ng-option-label')]");
 
     public static final Target INPUT_INGRESOS = Target.the("Input Ingresos").locatedBy("#onboarding_campo_ingresos");
 

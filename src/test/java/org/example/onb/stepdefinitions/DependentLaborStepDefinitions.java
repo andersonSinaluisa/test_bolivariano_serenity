@@ -11,6 +11,7 @@ import net.thucydides.core.webdriver.SerenityWebdriverManager;
 import org.example.onb.interactions.ConfirmDataPage;
 import org.example.onb.interactions.DomicilePage;
 import org.example.onb.interactions.HomePage;
+import org.example.onb.interactions.SelfEmployedPage;
 import org.example.onb.models.Person;
 import org.example.onb.tasks.*;
 import org.openqa.selenium.WebDriver;
@@ -117,17 +118,24 @@ public class DependentLaborStepDefinitions {
     }
     @Then("el usuario es redirigido a la pagina de ingresar datos laborales")
     public void el_usuario_es_redirigido_a_la_pagina_de_ingresar_datos_laborales() {
-        // Write code here that turns the phrase above into concrete actions
+        actor.should(seeThat(
+                the(SelfEmployedPage.TEXT_TITLE),
+                isPresent()
+        ));
     }
     @When("el usuario ingresa sus datos laborales")
     public void el_usuario_ingresa_sus_datos_laborales(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
+        //      | <nombreEmpresa> | <antiguedad> | <ingresoMensual> | <gastoMensual> | <direccion_trabajo> | <referencia> | <telefonoTrabajo> |
+        person.setNombreEmpresa(dataTable.cell(0,0));
+        person.setAntiguedad(dataTable.cell(0,1));
+        person.setIngresoMensual(dataTable.cell(0,2));
+        person.setEgresoMensual(dataTable.cell(0,3));
+        person.setDireccionTrabajo(dataTable.cell(0,4));
+        person.setReferencia(dataTable.cell(0,5));
+        person.setTelefonoTrabajo(dataTable.cell(0,6));
+
+
+        actor.wasAbleTo(EnterDataInDependentLabor.withData(person));
     }
     @Then("el usuario es redirigido a la pagina de ingresar datos de declaracion patrimonial")
     public void el_usuario_es_redirigido_a_la_pagina_de_ingresar_datos_de_declaracion_patrimonial() {

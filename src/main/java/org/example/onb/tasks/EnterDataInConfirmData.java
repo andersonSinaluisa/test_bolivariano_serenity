@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
@@ -22,8 +23,14 @@ public class EnterDataInConfirmData  implements Interaction {
     }
     @Override
     public <T extends Actor> void performAs(T actor) {
+
+
+
         actor.attemptsTo(
+                //enter ctrl + a + del in INPUT_CELULAR
+                Clear.field(ConfirmDataPage.INPUT_CELULAR),
                 Enter.theValue(person.getCelular()).into(ConfirmDataPage.INPUT_CELULAR),
+                Clear.field(ConfirmDataPage.INPUT_EMAIL),
                 Enter.theValue(person.getCorreo()).into(ConfirmDataPage.INPUT_EMAIL),
                 Click.on(ConfirmDataPage.SELECT_CIUDAD),
                 Click.on(ConfirmDataPage.SELECT_CIUDAD_OPTION),
