@@ -1,6 +1,7 @@
 package org.example.onb.tasks;
 
 import com.google.common.reflect.ClassPath;
+import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
@@ -15,27 +16,14 @@ import java.io.IOException;
 import java.nio.file.Paths;
 public class OpenChromeOnWeb implements Interaction {
     private HomePage homePage = new HomePage();
-
+    @Managed(driver = "chrome")
+    private WebDriver theBrowser;
+    private Actor actor = Actor.named("Anderson");
     @Override
     public <T extends Actor> void performAs(T actor) {
         // Especifica la ubicación del chromedriver.exe en tu sistema Windows
-        String directorioBase = Paths.get("").toAbsolutePath().toString();
 
-        //join src/test/resources/windows/chromedriver.exe
-        directorioBase = Paths.get(directorioBase, "src", "test", "resources", "windows","chromedriver.exe").toAbsolutePath().toString();
-
-
-        System.out.println(directorioBase);
-        String rutaControlador = directorioBase ;
-
-        System.setProperty("webdriver.chrome.driver", rutaControlador);
-
-        // Configura las opciones de Chrome, si es necesario
-        ChromeOptions chromeOptions = new ChromeOptions();
-        // chromeOptions.addArguments("--start-maximized"); // Por ejemplo, para iniciar Chrome maximizado
-
-        WebDriver driver = new ChromeDriver(chromeOptions);
-        actor.whoCan(BrowseTheWeb.with(driver));
+        actor.whoCan(BrowseTheWeb.with(theBrowser));
 
         actor.wasAbleTo(Open.browserOn(homePage));
     }

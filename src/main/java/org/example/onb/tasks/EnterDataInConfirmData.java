@@ -33,9 +33,9 @@ public class EnterDataInConfirmData  implements Interaction {
                 Clear.field(ConfirmDataPage.INPUT_EMAIL),
                 Enter.theValue(person.getCorreo()).into(ConfirmDataPage.INPUT_EMAIL),
                 Click.on(ConfirmDataPage.SELECT_CIUDAD),
-                Click.on(ConfirmDataPage.SELECT_CIUDAD_OPTION),
+                Click.on(ConfirmDataPage.SELECT_CIUDAD_OPTION.of(person.getCiudad())),
                 Click.on(ConfirmDataPage.SELECT_OFICINA),
-                Click.on(ConfirmDataPage.SELECT_CIUDAD_OPTION)
+                Click.on(ConfirmDataPage.SELECT_OFICINA_OPTION.of(person.getOficina()))
         );
 
 

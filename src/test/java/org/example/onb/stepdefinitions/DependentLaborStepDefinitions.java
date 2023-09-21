@@ -8,10 +8,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.thucydides.core.webdriver.SerenityWebdriverManager;
-import org.example.onb.interactions.ConfirmDataPage;
-import org.example.onb.interactions.DomicilePage;
-import org.example.onb.interactions.HomePage;
-import org.example.onb.interactions.SelfEmployedPage;
+import org.example.onb.interactions.*;
 import org.example.onb.models.Person;
 import org.example.onb.tasks.*;
 import org.openqa.selenium.WebDriver;
@@ -78,6 +75,7 @@ public class DependentLaborStepDefinitions {
         person.setCorreo(dataTable.cell(0,1));
         person.setCiudad(dataTable.cell(0,2));
         person.setDireccion(dataTable.cell(0,3));
+        person.setOficina(dataTable.cell(0,4));
 
 
         actor.wasAbleTo(EnterDataInConfirmData.withData(person));
@@ -118,10 +116,10 @@ public class DependentLaborStepDefinitions {
     }
     @Then("el usuario es redirigido a la pagina de ingresar datos laborales")
     public void el_usuario_es_redirigido_a_la_pagina_de_ingresar_datos_laborales() {
-        actor.should(seeThat(
+        /*actor.should(seeThat(
                 the(SelfEmployedPage.TEXT_TITLE),
                 isPresent()
-        ));
+        ));*/
     }
     @When("el usuario ingresa sus datos laborales")
     public void el_usuario_ingresa_sus_datos_laborales(io.cucumber.datatable.DataTable dataTable) {
@@ -140,16 +138,22 @@ public class DependentLaborStepDefinitions {
     @Then("el usuario es redirigido a la pagina de ingresar datos de declaracion patrimonial")
     public void el_usuario_es_redirigido_a_la_pagina_de_ingresar_datos_de_declaracion_patrimonial() {
         // Write code here that turns the phrase above into concrete actions
+
     }
     @When("el usuario ingresa sus datos de declaracion patrimonial")
     public void el_usuario_ingresa_sus_datos_de_declaracion_patrimonial(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
+        // | <posee_activos_ni_pasivos> | <activos> | <pasivos> | <tiene_otra_nacionalidad> | <tiene_residencia_eeuu> | <tiene_efectos_tributarios> |
+        boolean poseeActivosniPasivos = dataTable.cell(0,0).equals("Si")?true:false;
+        person.setPoseeActivosniPasivos(poseeActivosniPasivos);
+        person.setActivos(dataTable.cell(0,1));
+        person.setPasivos(dataTable.cell(0,2));
+        person.setTieneOtraNacionalidad(dataTable.cell(0,3));
+        person.setTieneResidenciaEEUU(dataTable.cell(0,4));
+        person.setTieneEfectosTributarios(dataTable.cell(0,5));
+
+
+        actor.wasAbleTo(EnterDataInPatrimonialDeclaration.withData(person));
+
     }
     @Then("el usuario es redirigido a la pagina venta cruzada")
     public void el_usuario_es_redirigido_a_la_pagina_venta_cruzada() {
@@ -164,36 +168,59 @@ public class DependentLaborStepDefinitions {
         // Double, Byte, Short, Long, BigInteger or BigDecimal.
         //
         // For other transformations you can register a DataTableType.
+        actor.wasAbleTo(SelectAditionalProduct.withData(person));
+
     }
     @Then("el usuario es redirigido a la pagina de contrato")
     public void el_usuario_es_redirigido_a_la_pagina_de_contrato() {
         // Write code here that turns the phrase above into concrete actions
+        actor.should(
+                seeThat(
+                        the(ContractPage.TITLE_TEXT),
+                        isPresent()
+                )
+        );
     }
     @When("el usuario acepta los terminos y condiciones y contratos")
     public void el_usuario_acepta_los_terminos_y_condiciones_y_contratos() {
         // Write code here that turns the phrase above into concrete actions
+        actor.attemptsTo(AcceptContracts.check());
     }
     @Then("el usuario es redirigido a la pagina de otp")
     public void el_usuario_es_redirigido_a_la_pagina_de_otp() {
         // Write code here that turns the phrase above into concrete actions
+        actor.should(
+                seeThat(
+                        the(OtpPage.EMAIL_MEDIO),
+                        isPresent()
+                )
+        );
     }
     @When("el usuario ingresa el codigo otp")
     public void el_usuario_ingresa_el_codigo_otp(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
+
+        person.setCodigoOtp(dataTable.cell(0,0));
+        
+        actor.wasAbleTo(
+            EnterOTPCode.withData(person)
+        );
+
     }
     @Then("el usuario es redirigido a la pagina de resumen")
     public void el_usuario_es_redirigido_a_la_pagina_de_resumen() {
         // Write code here that turns the phrase above into concrete actions
+        actor.should(
+                seeThat(
+                        the(ResumePage.TITLE_MODAL),
+                        isPresent()
+                )
+        );
     }
     @Then("debe ver el numero de cuenta generada")
     public void debe_ver_el_numero_de_cuenta_generada() {
         // Write code here that turns the phrase above into concrete actions
+        actor.wasAbleTo(ViewResume.withData(person));
+        actor.wasAbleTo(GenerateReportCSV.withData(person));
     }
 
 

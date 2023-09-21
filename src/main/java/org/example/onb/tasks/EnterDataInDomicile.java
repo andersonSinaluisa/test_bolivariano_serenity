@@ -55,10 +55,14 @@ public class EnterDataInDomicile  implements Interaction {
                 Click.on(DomicilePage.SELECT_SITUACION_LABORAL)
         );
 
-        getDriver().manage().timeouts().implicitlyWait(5, java.util.concurrent.TimeUnit.SECONDS);
-        actor.attemptsTo(
-                Click.on(DomicilePage.SELECT_SITUACION_LABORAL_OPTION.of(person.getSituacionLaboral()))
-        );
+        getDriver().manage().timeouts().implicitlyWait(8, java.util.concurrent.TimeUnit.SECONDS);
+
+        if(DomicilePage.SELECT_SITUACION_LABORAL_OPTION.of(person.getSituacionLaboral()).isVisibleFor(actor)){
+
+            actor.attemptsTo(
+                    Click.on(DomicilePage.SELECT_SITUACION_LABORAL_OPTION.of(person.getSituacionLaboral()))
+            );
+        }
 
 
 

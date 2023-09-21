@@ -6,7 +6,9 @@ import net.serenitybdd.screenplay.targets.Target;
 public class AssetDeclaration {
 
     public static final Target CHECK_POSSE_ACTIVOS = Target.the("Check Posse Activos").located(By.name("group1"));
-
+    
+    
+    public static final Target CHECK_VERIFY = Target.the("Check Verify").locatedBy("//div[@role=\"checkbox\"]");
     //currency-field
     public static final Target INPUT_VALOR_ACTIVOS = Target.the("Input Valor Activos").locatedBy("#currency-field");
 
@@ -15,7 +17,8 @@ public class AssetDeclaration {
 
 
     ////*[@id="custom-panel-otraNacionalidad-header"]/div/div/span/button[1]
-    public static final Target BOTON_AGREGAR_NACIONALIDAD = Target.the("Boton Agregar Nacionalidad").locatedBy("//*[@id=\"custom-panel-otraNacionalidad-header\"]/div/div/span/button[contains(span, '{0}')]");
+    public static final Target BOTON_AGREGAR_NACIONALIDAD = Target.the("Boton Agregar Nacionalidad").locatedBy("(//span[text()=\"{0}\"])[1]");
+
 
     //paddingSelectedPais
     public static final Target SELECT_PAIS = Target.the("Select Pais").locatedBy("#paddingSelectedPais");
@@ -25,7 +28,7 @@ public class AssetDeclaration {
 
     //*[@id="custom-panel-residenciaUSA-header"]/div/div/span/button[1]
 
-    public static final Target BOTON_AGREGAR_RESIDENCIA = Target.the("Boton Agregar Residencia").locatedBy("//*[@id=\"custom-panel-residenciaUSA-header\"]/div/div/span/button[contains(span, '{0}')]");
+    public static final Target BOTON_AGREGAR_RESIDENCIA = Target.the("Boton Agregar Residencia").locatedBy("(//span[text()=\"{0}\"])[2]");
 
     //usaId
     public static final Target INPUT_USA_ID = Target.the("Input USA ID").locatedBy("#usaId");
@@ -35,7 +38,7 @@ public class AssetDeclaration {
 
 
     ////*[@id="custom-panel-otraResidenciaFiscal-header"]/div/div/span/button[1]
-    public static final Target BOTON_AGREGAR_OTRA_RESIDENCIA = Target.the("Boton Agregar Otra Residencia").locatedBy("//*[@id=\"custom-panel-otraResidenciaFiscal-header\"]/div/div/span/button[contains(span, '{0}')]");
+    public static final Target BOTON_AGREGAR_OTRA_RESIDENCIA = Target.the("Boton Agregar Otra Residencia").locatedBy("(//span[text()=\"{0}\"])[3]");
 
     //paddingSelectedPais2
     public static final Target SELECT_PAIS2 = Target.the("Select Pais2").locatedBy("#paddingSelectedPais2");

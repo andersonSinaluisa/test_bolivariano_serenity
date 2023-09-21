@@ -7,6 +7,7 @@ public class Person {
     private String celular;
     private String correo;
     private String ciudad;
+    private String oficina;
     private String direccion;
     private String parroquia;
     private String direccionCompleta;
@@ -25,8 +26,7 @@ public class Person {
 
     private String EgresoMensual;
     private String telefono;
-    private String poseeActivos;
-    private String poseePasivos;
+    private boolean poseeActivosniPasivos;
     private String activos;
     private String pasivos;
     private String tieneOtraNacionalidad;
@@ -227,20 +227,20 @@ public class Person {
         this.telefonoTrabajo = telefonoTrabajo;
     }
 
-    public String getPoseeActivos() {
-        return poseeActivos;
+    public boolean isPoseeActivosniPasivos() {
+        return poseeActivosniPasivos;
     }
 
-    public void setPoseeActivos(String poseeActivos) {
-        this.poseeActivos = poseeActivos;
+    public void setPoseeActivosniPasivos(boolean poseeActivosniPasivos) {
+        this.poseeActivosniPasivos = poseeActivosniPasivos;
     }
 
-    public String getPoseePasivos() {
-        return poseePasivos;
+    public String getOficina() {
+        return oficina;
     }
 
-    public void setPoseePasivos(String poseePasivos) {
-        this.poseePasivos = poseePasivos;
+    public void setOficina(String oficina) {
+        this.oficina = oficina;
     }
 
     public String getActivos() {

@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class DomicilePage {
 
 
-    public static final Target TEXT_TITILE = Target.the("Text Title").locatedBy("//h5[starts-with(text(),' Ingresa tus datos de contacto')]");
+    public static final Target TEXT_TITILE = Target.the("Text Title").locatedBy("//h5[contains(text(),'Ingresa tus datos de contacto')]");
 
     public static final Target SELECT_CIUDAD = Target.the("Select Ciudad").locatedBy("#paddingSelected");
 

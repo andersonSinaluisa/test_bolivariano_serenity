@@ -14,6 +14,10 @@ public class DependentLaborPage {
 
     public static final Target INPUT_EGRESOS = Target.the("Input Ingresos Mensuales").locatedBy("#onboarding_gastos_mensuales");
 
+
+    public static final Target INPUT_VENTAS_MENSUALES = Target.the("Input Ventas Mensuales").locatedBy("(//*[@id=\"onboarding_ventas_mensuales\"])[1]");
+
+    public static final Target INPUT_GASTOS_MENSUALES = Target.the("Input Gastos Mensuales").locatedBy("(//*[@id=\"onboarding_gastos_mensuales\"])[1]");
     public static final Target SELECT_CIUDAD = Target.the("Select Ciudad").locatedBy("#paddingSelected");
 
     public static final Target SELECT_CIUDAD_OPTION = Target.the("Select Ciudad Option").locatedBy(".ng-option  .ng-option-label");
@@ -27,7 +31,7 @@ public class DependentLaborPage {
     public static final Target INPUT_REFERENCIA = Target.the("Input Referencia").locatedBy("#onboarding_referencia");
 
     //onboarding_numero_domicilio
-    public static final Target INPUT_TELEFONO = Target.the("Input Telefono").locatedBy("#onboarding_numero_domicilio");
+    public static final Target INPUT_TELEFONO = Target.the("Input Telefono").locatedBy("(//*[@placeholder=\"Ej: 2257896\"])[2]");
 
     //botonContinuar
     public static final Target BOTON_CONTINUAR = Target.the("Boton Continuar").locatedBy("#botonContinuar");
