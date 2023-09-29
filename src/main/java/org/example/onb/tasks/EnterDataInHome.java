@@ -20,6 +20,16 @@ public class EnterDataInHome implements Interaction {
     }
     @Override
     public <T extends Actor> void performAs(T actor) {
+
+
+        /*try{
+            actor.attemptsTo(
+                    Click.on(HomePage.BUTTON_OFI_CONTINUE)
+            );
+        }catch (Exception e){
+            System.out.println("No se encontro el boton de continuar");
+        }*/
+
         actor.attemptsTo(
                 Enter.theValue(person.getCedula()).into(HomePage.INPUT_CEDULA),
                 Enter.theValue(person.getCodigoDactilar()).into(HomePage.INPUT_CODIGO_DACTILAR),

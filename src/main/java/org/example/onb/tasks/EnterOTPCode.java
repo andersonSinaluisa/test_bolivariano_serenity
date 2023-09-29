@@ -45,6 +45,7 @@ public class EnterOTPCode  implements Interaction{
         actor.attemptsTo(
             Click.on(OtpPage.BUTTON_CVONTINUE_1)
         );
+        getDriver().manage().timeouts().implicitlyWait(15, java.util.concurrent.TimeUnit.SECONDS);
 
     }
 

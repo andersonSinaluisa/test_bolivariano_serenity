@@ -9,6 +9,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 import org.example.onb.interactions.AssetDeclaration;
 import org.example.onb.models.Person;
 
+import static net.serenitybdd.core.Serenity.getDriver;
+
 public class EnterDataInPatrimonialDeclaration implements Interaction {
 
     private Person person;
@@ -21,6 +23,8 @@ public class EnterDataInPatrimonialDeclaration implements Interaction {
     }
     @Override
     public <T extends Actor> void performAs(T actor) {
+        getDriver().manage().timeouts().implicitlyWait(5, java.util.concurrent.TimeUnit.SECONDS);
+
         if(person.isPoseeActivosniPasivos()) {
 
             boolean check = AssetDeclaration.CHECK_VERIFY.resolveFor(actor).getAttribute("aria-checked").equals("true");

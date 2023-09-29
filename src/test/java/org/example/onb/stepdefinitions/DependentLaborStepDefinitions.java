@@ -20,7 +20,6 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-
 public class DependentLaborStepDefinitions {
     @Managed(driver = "chrome")
     private WebDriver theBrowser;

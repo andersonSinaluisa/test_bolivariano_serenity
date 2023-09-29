@@ -24,4 +24,6 @@ public class HomePage extends PageObject {
     public static final Target ALERT_MESSAGE_ERROR = Target.the("Alert Message Error").locatedBy("#pregunta1 > app-error-message > div");
 
     public static final Target LOADER = Target.the("Loader").locatedBy("body > div > div > div > img");
+
+    public static final Target BUTTON_OFI_CONTINUE = Target.the("Button Ofi Continue").locatedBy("(//button[contains(text(),'Continuar')])[2]");
 }

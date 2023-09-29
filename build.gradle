@@ -29,6 +29,7 @@ dependencies {
     testImplementation 'net.serenity-bdd:serenity-core:4.0.12'
     implementation 'net.serenity-bdd:serenity-screenplay-webdriver:4.0.12'
     testImplementation 'net.serenity-bdd:serenity-cucumber:4.0.12'
+    implementation 'com.google.code.gson:gson:2.10.1'
 
     testImplementation 'junit:junit:4.13.1'
 }

@@ -10,6 +10,6 @@ public class ProductPage {
     //#pregunta6 > div > div > div.content-info > div.row.center-prod > div:nth-child(2) > div > p-checkbox
     public static final Target CHECKBOX_2 = Target.the("Checkbox 2").locatedBy("#pregunta6 > div > div > div.content-info > div.row.center-prod > div:nth-child(2) > div > p-checkbox");
 
-    public static final Target BOTON_CONTINUAR = Target.the("Boton Continuar").locatedBy("(//*[@id=\"botonContinuar\"])[1]");
+    public static final Target BOTON_CONTINUAR = Target.the("Boton Continuar").locatedBy("(//*[@id=\"botonContinuar\"])[2]");
 
 }

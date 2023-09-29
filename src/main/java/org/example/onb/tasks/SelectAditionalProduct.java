@@ -20,11 +20,10 @@ public class SelectAditionalProduct implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        if (ProductPage.BOTON_CONTINUAR.isVisibleFor(actor)){
-            actor.attemptsTo(
-                    Click.on(ProductPage.BOTON_CONTINUAR)
-            );
-        }
+        actor.attemptsTo(
+                Click.on(ProductPage.BOTON_CONTINUAR)
+        );
+
         getDriver().manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS);
 
     }

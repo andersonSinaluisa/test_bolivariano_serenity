@@ -1,0 +1,2 @@
+cedula,solicitudId,correo,cuenta
+1722600192,FI1fm8GcdJ-20230927,asinalut@bolivariano.com,0009602835

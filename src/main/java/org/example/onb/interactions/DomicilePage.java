@@ -27,7 +27,7 @@ public class DomicilePage {
 
     public static final Target SELECT_SITUACION_LABORAL = Target.the("Select Situacion Laboral").locatedBy("#onb_select_situacion_laboral");
 
-    public static final Target SELECT_SITUACION_LABORAL_OPTION = Target.the("Select Situacion Laboral Option").locatedBy("//span[starts-with(text(),\"{0}\")]");
+    public static final Target SELECT_SITUACION_LABORAL_OPTION = Target.the("Select Situacion Laboral Option").locatedBy("//span[contains(text(),\"{0}\")]");
 
 
     public static final Target SELECT_TIPO_TRABAJO =    Target.the("Select Tipo Trabajo").locatedBy("/html/body/app-root/div/div[2]/app-ingresa-domicilio/section[2]/div[2]/div[3]/div/div[2]/ng-select");
