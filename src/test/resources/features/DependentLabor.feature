@@ -1,8 +1,9 @@
-Feature: Abrir una cuenta como laboral dependiente
+Feature: Abrir una cuenta de ahorro online
 
   @Onboarding
-  @Serenity@
-  Scenario Outline:
+  @Serenity
+  @Scenario
+  Scenario Outline: Abrir una cuenta como laboral dependiente
     Given que el usuario ingresa a la pagina de inicio
       | <dispositivo> |
     When el usuario ingresa sus datos y hace click en el boton de continuar
@@ -35,4 +36,21 @@ Feature: Abrir una cuenta como laboral dependiente
     Examples:
         | dispositivo | cedula | codigoDactilar | celular | correo | ciudad | oficina  | direccion | parroquia | direccionCompleta | descripcionCasa | referenciaCasa | numeroDomicilio | situacionLaboral | dependienteLaboral | nombreEmpresa | antiguedad | ingresoMensual | gastoMensual| direccion_trabajo | referencia | telefonoTrabajo | posee_activos_ni_pasivos | activos | pasivos | tiene_otra_nacionalidad | tiene_residencia_eeuu | tiene_efectos_tributarios | producto | codigoOtp |
         |web|1311963266 |E1EEEEEEEEE|0923256585|asinalut551@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica y secundaria|Casa blanca de un piso|en lado de la farmacia|2325445|Dependiente  |Público|Banco bolivariano|1|1500|400|DireccionTrabajo1|Referencia1|2232453|Si|50000|20000|No|No|No|Producto1|111111|
+
+
+
+  @Onboarding
+    @Serenity
+    @Scenario
+  Scenario Outline: Abrir una cuenta como laboral independiente
+    Given que el usuario ingresa a la pagina de inicio
+      | <dispositivo> |
+    When el usuario ingresa sus datos y hace click en el boton de continuar
+      | <cedula> | <codigoDactilar> |
+    Then el usuario es redirigido a la pagina de confirmacion de datos
+
+
+    Examples:
+      | dispositivo | cedula | codigoDactilar | celular | correo | ciudad | oficina  | direccion | parroquia | direccionCompleta | descripcionCasa | referenciaCasa | numeroDomicilio | situacionLaboral | dependienteLaboral | nombreEmpresa | antiguedad | ingresoMensual | gastoMensual| direccion_trabajo | referencia | telefonoTrabajo | posee_activos_ni_pasivos | activos | pasivos | tiene_otra_nacionalidad | tiene_residencia_eeuu | tiene_efectos_tributarios | producto | codigoOtp |
+      |web|1311963266 |E1EEEEEEEEE|0923256585|asinalut551@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica y secundaria|Casa blanca de un piso|en lado de la farmacia|2325445|Independiente  |Público|Banco bolivariano|1|1500|400|DireccionTrabajo1|Referencia1|2232453|Si|50000|20000|No|No|No|Producto1|111111|
 
