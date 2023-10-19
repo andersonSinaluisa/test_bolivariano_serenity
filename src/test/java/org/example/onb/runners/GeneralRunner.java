@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "org.example.onb.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@Onboarding"
+        tags = "@Onboarding",
+        plugin = {"pretty", "html:target/cucumber-reports.html"}
 
 )
 public class GeneralRunner {

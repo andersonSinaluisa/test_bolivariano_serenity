@@ -11,6 +11,7 @@ import org.example.onb.interactions.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 //import os path java
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -19,9 +20,14 @@ public class OpenChromeOnWeb implements Interaction {
     @Managed(driver = "chrome")
     private WebDriver theBrowser;
     private Actor actor = Actor.named("Anderson");
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         // Especifica la ubicación del chromedriver.exe en tu sistema Windows
+        System.setProperty("webdriver.chrome.options", "--load-extension="+Paths.get("src/test/resources/webdriver/windows/qmetry.crx").toAbsolutePath().toString());
+
+        //set options for driver
+
 
         actor.whoCan(BrowseTheWeb.with(theBrowser));
 

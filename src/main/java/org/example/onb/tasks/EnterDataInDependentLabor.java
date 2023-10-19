@@ -31,6 +31,10 @@ public class EnterDataInDependentLabor  implements Interaction {
                     Enter.theValue(person.getIngresoMensual()).into(DomicilePage.INPUT_INGRESOS),
                     Enter.theValue(person.getEgresoMensual()).into(DomicilePage.INPUT_EGRESOS)
             );
+            actor.attemptsTo(
+                    Click.on(DependentLaborPage.BOTON_CONTINUAR)
+
+            );
             return;
         }
 
@@ -53,11 +57,12 @@ public class EnterDataInDependentLabor  implements Interaction {
 
 
         if(person.getSituacionLaboral().equals("Independiente")){
-            actor.attemptsTo(
-                    Enter.theValue(person.getEgresoMensual()).into(DependentLaborPage.INPUT_GASTOS_MENSUALES)
-            );
+
             actor.attemptsTo(
                     Enter.theValue(person.getIngresoMensual()).into(DependentLaborPage.INPUT_VENTAS_MENSUALES)
+            );
+            actor.attemptsTo(
+                    Enter.theValue(person.getEgresoMensual()).into(DependentLaborPage.INPUT_GASTOS_MENSUALES)
             );
         }
         //esperar implicito

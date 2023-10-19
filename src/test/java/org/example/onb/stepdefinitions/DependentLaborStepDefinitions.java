@@ -167,6 +167,10 @@ public class DependentLaborStepDefinitions {
         // Double, Byte, Short, Long, BigInteger or BigDecimal.
         //
         // For other transformations you can register a DataTableType.
+        //| <cuenta_mas> | <valor_cta_mas> | <avisos24> |
+        person.setCuenta_mas(dataTable.cell(0,0));
+        person.setValor_cta_mas(dataTable.cell(0,1));
+        person.setAvisos_24(dataTable.cell(0,2));
         actor.wasAbleTo(SelectAditionalProduct.withData(person));
 
     }

@@ -9,6 +9,9 @@ import org.example.onb.models.Person;
 import org.openqa.selenium.JavascriptExecutor;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import static net.serenitybdd.core.Serenity.getDriver;
@@ -27,7 +30,7 @@ public class GenerateReportCSV implements Interaction {
     public <T extends Actor> void performAs(T actor) {
 
         JavascriptExecutor jsExecutor = (JavascriptExecutor) getDriver();
-        String script = "return window.localStorage.getItem(arguments[0]);";
+        String script = "return window.sessionStorage.getItem(arguments[0]);";
         //get data from local storage
         String solicitudId =  (String) jsExecutor.executeScript(script, "solicitudId");
         String path = makeFileTxt(person,solicitudId);
@@ -60,12 +63,18 @@ public class GenerateReportCSV implements Interaction {
 
             // Whatever the file path is.
             File statText = new File(downloadPath);
-            FileOutputStream is = new FileOutputStream(statText);
-            OutputStreamWriter osw = new OutputStreamWriter(is);
-            Writer w = new BufferedWriter(osw);
+            if(!statText.exists()){
 
-            w.write(p.getCedula()+","+solicitudId+","+p.getNumeroCuentaGenerada()+","+p.getCorreo());
-            w.close();
+                //create file
+                statText.createNewFile();
+
+
+            }
+
+            String text = p.getCedula()+","+solicitudId+","+p.getNumeroCuentaGenerada()+","+p.getCorreo()+"\n";
+
+            Files.write(Paths.get(downloadPath), text.getBytes(), StandardOpenOption.APPEND);
+
             return downloadPath;
         } catch (IOException e) {
             System.err.println("Problem writing to the file " + e);

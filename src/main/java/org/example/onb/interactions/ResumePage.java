@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class ResumePage {
 
     public static final Target TITLE_MODAL = Target.the("title modal")
-            .locatedBy("//*[contains(text(), ' ¡Tu cuenta de ahorros está lista! ')]");
+            .locatedBy("//*[contains(text(), '¡Tu cuenta de ahorros está lista!')]");
 
     ////*[@class="close"]
     public static final Target BTN_CLOSE_MODAL = Target.the("button close modal")

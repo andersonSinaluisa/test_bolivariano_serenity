@@ -32,7 +32,9 @@ public class Person {
     private String tieneOtraNacionalidad;
     private String tieneResidenciaEEUU;
     private String tieneEfectosTributarios;
-    private String producto;
+    private String cuenta_mas;
+    private String avisos_24;
+    private String valor_cta_mas;
     private String codigoOtp;
     private String numeroCuentaGenerada;
 
@@ -283,12 +285,28 @@ public class Person {
         this.tieneEfectosTributarios = tieneEfectosTributarios;
     }
 
-    public String getProducto() {
-        return producto;
+    public String getCuenta_mas() {
+        return cuenta_mas;
     }
 
-    public void setProducto(String producto) {
-        this.producto = producto;
+    public void setCuenta_mas(String cuenta_mas) {
+        this.cuenta_mas = cuenta_mas;
+    }
+
+    public String getAvisos_24() {
+        return avisos_24;
+    }
+
+    public void setAvisos_24(String avisos_24) {
+        this.avisos_24 = avisos_24;
+    }
+
+    public String getValor_cta_mas() {
+        return valor_cta_mas;
+    }
+
+    public void setValor_cta_mas(String valor_cta_mas) {
+        this.valor_cta_mas = valor_cta_mas;
     }
 
     public String getCodigoOtp() {
