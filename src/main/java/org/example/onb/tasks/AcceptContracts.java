@@ -18,30 +18,38 @@ public class AcceptContracts implements Interaction{
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        getDriver().manage().timeouts().implicitlyWait(35, java.util.concurrent.TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(700, java.util.concurrent.TimeUnit.SECONDS);
 
-        actor.attemptsTo(
-                Click.on(ContractPage.TITLE_CONTRATO)
-        );
+        if (ContractPage.TITLE_TEXT.resolveFor(actor).isVisible()){
+            actor.attemptsTo(
+                    Click.on(ContractPage.TITLE_CONTRATO)
+            );
+        }
+
+        if (ContractPage.TITLE_TEXT.resolveFor(actor).isVisible()){
+            actor.attemptsTo(
+                    Click.on(
+                            ContractPage.TITLE_CONTRATO_FIRMA
+                    )
+            );
+        }
 
 
-        actor.attemptsTo(
-                Click.on(
-                        ContractPage.TITLE_CONTRATO_FIRMA
-                )
-        );
+        if (ContractPage.TITLE_TEXT.resolveFor(actor).isVisible()){
+            actor.attemptsTo(
+                    Click.on(
+                            ContractPage.CHECK_TERMINOS
+                    )
+            );
+        }
 
-
-        actor.attemptsTo(
-                Click.on(
-                        ContractPage.CHECK_TERMINOS
-                )
-        );
-        actor.attemptsTo(
-                Click.on(
-                        ContractPage.CHECK_TERMINOS
-                )
-        );
+        if (ContractPage.TITLE_TEXT.resolveFor(actor).isVisible()){
+            actor.attemptsTo(
+                    Click.on(
+                            ContractPage.CHECK_TERMINOS
+                    )
+            );
+        }
 
         actor.attemptsTo(
                 Click.on(ContractPage.BOTON_CONTINUAR)

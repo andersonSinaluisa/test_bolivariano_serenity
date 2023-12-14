@@ -24,11 +24,11 @@ public class OpenChromeOnWeb implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         // Especifica la ubicación del chromedriver.exe en tu sistema Windows
-        System.setProperty("webdriver.chrome.options", "--load-extension="+Paths.get("src/test/resources/webdriver/windows/qmetry.crx").toAbsolutePath().toString());
 
         //set options for driver
 
-
+        //webdriver.chrome.driver
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Documents\\bb\\test_bolivariano_serenity\\src\\test\\resources\\webdriver\\windows\\chromedriver.exe");
         actor.whoCan(BrowseTheWeb.with(theBrowser));
 
         actor.wasAbleTo(Open.browserOn(homePage));

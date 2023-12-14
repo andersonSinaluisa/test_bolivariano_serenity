@@ -39,11 +39,7 @@ public class EnterDataInDependentLabor  implements Interaction {
         }
 
 
-        actor.attemptsTo(
-                //ctrl + A
-                Click.on(DependentLaborPage.INPUT_NOMBRE_EMPRESA),
-                Enter.theValue(person.getNombreEmpresa()).into(DependentLaborPage.INPUT_NOMBRE_EMPRESA)
-        );
+
         getDriver().manage().timeouts().implicitlyWait(5, java.util.concurrent.TimeUnit.SECONDS);
 
         if(person.getSituacionLaboral().equals("Dependiente")){
@@ -96,8 +92,10 @@ public class EnterDataInDependentLabor  implements Interaction {
 
         );
         actor.attemptsTo(
-                Click.on(DependentLaborPage.INPUT_TELEFONO),
                 Enter.theValue(person.getTelefonoTrabajo()).into(DependentLaborPage.INPUT_TELEFONO)
+        );
+        actor.attemptsTo(
+                Enter.theValue(person.getNombreEmpresa()).into(DependentLaborPage.INPUT_NOMBRE_EMPRESA)
         );
         actor.attemptsTo(
                 Click.on(DependentLaborPage.BOTON_CONTINUAR)

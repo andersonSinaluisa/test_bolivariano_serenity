@@ -15,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static net.serenitybdd.core.Serenity.getDriver;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
@@ -172,6 +173,8 @@ public class DependentLaborStepDefinitions {
         person.setValor_cta_mas(dataTable.cell(0,1));
         person.setAvisos_24(dataTable.cell(0,2));
         actor.wasAbleTo(SelectAditionalProduct.withData(person));
+        getDriver().manage().timeouts().implicitlyWait(700, java.util.concurrent.TimeUnit.SECONDS);
+
 
     }
     @Then("el usuario es redirigido a la pagina de contrato")

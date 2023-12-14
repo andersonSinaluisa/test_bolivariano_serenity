@@ -71,7 +71,6 @@ public class SelectAditionalProduct implements Interaction {
             );
         }
 
-        getDriver().manage().timeouts().implicitlyWait(35, java.util.concurrent.TimeUnit.SECONDS);
 
     }
 

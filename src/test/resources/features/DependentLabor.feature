@@ -35,9 +35,8 @@ Feature: Abrir una cuenta de ahorro online
 
     Examples:
         | dispositivo | cedula | codigoDactilar | celular | correo | ciudad | oficina  | direccion | parroquia | direccionCompleta | descripcionCasa | referenciaCasa | numeroDomicilio | situacionLaboral | dependienteLaboral | nombreEmpresa | antiguedad | ingresoMensual | gastoMensual| direccion_trabajo | referencia | telefonoTrabajo | posee_activos_ni_pasivos | activos | pasivos | tiene_otra_nacionalidad | tiene_residencia_eeuu | tiene_efectos_tributarios | cuenta_mas | valor_cta_mas| avisos24 | codigoOtp |
-        | web|0800559353 |E1EEEEEEEEE|0936668565|cliente30@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica calle treceava|Casa blanca de un piso|en lado de la farmacia nueva|2325445|Dependiente  |Público|Canal uno|1|500|250|av publica|a lado de la farmacia|2232453|Si|50000|20000|No|No|No|Si|25|Si|111111 |
-        | web|0905685293 |E1EEEEEEEEE|0956633658|cliente31@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica calle onceava|Casa blanca de un piso|en lado de la farmacia nueva|2325445|Estudiante  |Público|Metrovía|1|900|369|av publica|a lado de la farmacia|2232453|Si|50000|20000|No|No|No|No|25|No|111111 |
-
-
-
-
+        | web|1706999750 |E1EEEEEEEEE|09116556555|clientedemo115@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica calle y la 023 95 AM|Casa blanca de un piso|en lado de la farmacia nueva|2325445|Dependiente  |Público|Canal uno|1|500|250|av publica|a lado de la farmacia|2232453|Si|50000|20000|No|No|No|Si|25|Si|111111 |
+        | web|0601302623 |E1EEEEEEEEE|09568986555|clientedemo116@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica calle y la 023 95 AN|Casa blanca de un piso|en lado de la farmacia nueva|2325445|Dependiente  |Público|Canal uno|1|500|250|av publica|a lado de la farmacia|2232453|Si|50000|20000|No|No|No|Si|25|Si|111111 |
+        | web|1801691104 |E1EEEEEEEEE|09132656655|clientedemo117@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica calle y la 023 95 AO|Casa blanca de un piso|en lado de la farmacia nueva|2325445|Dependiente  |Público|Canal uno|1|500|250|av publica|a lado de la farmacia|2232453|Si|50000|20000|No|No|No|Si|25|Si|111111 |
+        | web|1400154116 |E1EEEEEEEEE|09112554555|clientedemo118@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica calle y la 023 95 AP|Casa blanca de un piso|en lado de la farmacia nueva|2325445|Dependiente  |Público|Canal uno|1|500|250|av publica|a lado de la farmacia|2232453|Si|50000|20000|No|No|No|Si|25|Si|111111 |
+        | web|0801437815 |E1EEEEEEEEE|094656555656|clientedemo120@bolivariano.com|Guayaquil|9 De Octubre|Av publica|Tarqui|Av publica calle y la 023 95 AR|Casa blanca de un piso|en lado de la farmacia nueva|2325445|Dependiente  |Público|Canal uno|1|500|250|av publica|a lado de la farmacia|2232453|Si|50000|20000|No|No|No|Si|25|Si|111111 |
