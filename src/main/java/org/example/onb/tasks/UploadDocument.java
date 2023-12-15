@@ -8,14 +8,16 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Upload;
 import net.serenitybdd.screenplay.actions.UploadToField;
 import org.example.onb.interactions.UploadDocumentsPage;
+import org.example.onb.models.Person;
 
 import java.nio.file.Path;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 
 public class UploadDocument implements Interaction {
-
-    public UploadDocument() {
+    Person person;
+    public UploadDocument(Person person) {
+        this.person=person;
     }
     public static UploadDocument upload() {
         return Tasks.instrumented(UploadDocument.class);
@@ -31,7 +33,7 @@ public class UploadDocument implements Interaction {
                 Upload.theFile(
                         //test resource
                         Path.of(
-                                resource
+                                "C:\\Users\\User\\Documents\\bb\\test_bolivariano_serenity\\src\\test\\resources\\images\\PDF_PRUEBA.pdf"
                         )
                 ).to(
                         UploadDocumentsPage.CEDULA_DROPZONE
@@ -49,7 +51,7 @@ public class UploadDocument implements Interaction {
                 Upload.theFile(
                         Path.of("C:\\Users\\User\\Downloads\\1646187507427.jpg")
                 ).to(
-                        UploadDocumentsPage.CEDULA_DROPZONE
+                        UploadDocumentsPage.SERVICIOS_BASICOS_DROPZONE
                 )
         );
 
